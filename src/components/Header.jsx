@@ -1,5 +1,4 @@
 import React from 'react'
-import balloonLogo from '/brizzle-balloon.png'
 
 const Header = () => {
   return (
@@ -9,7 +8,7 @@ const Header = () => {
           <div className="hot-air-balloon" aria-label="Brizzle logo">
             <img
               className="hot-air-balloon-img"
-              src={balloonLogo}
+              src="/brizzle-balloon.png"
               alt="Brizzle hot air balloon logo"
               loading="eager"
               decoding="async"
