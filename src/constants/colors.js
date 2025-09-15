@@ -14,38 +14,38 @@ export const LEVEL_COLORS = {
 export const LEVELS = [
   {
     id: 'A1',
-    name: 'A1 - Débutant',
-    description: 'Niveau débutant - Apprenez les bases de l\'anglais',
+    name: 'Débutant',
+    description: 'Apprenez les bases de l\'anglais',
     color: LEVEL_COLORS.A1
   },
   {
     id: 'A2',
-    name: 'A2 - Élémentaire',
-    description: 'Niveau élémentaire - Développez vos compétences de base',
+    name: 'Élémentaire',
+    description: 'Développez vos compétences de base',
     color: LEVEL_COLORS.A2
   },
   {
     id: 'B1',
-    name: 'B1 - Intermédiaire',
-    description: 'Niveau intermédiaire - Communiquez avec confiance',
+    name: 'Intermédiaire',
+    description: 'Communiquez avec confiance',
     color: LEVEL_COLORS.B1
   },
   {
     id: 'B2',
-    name: 'B2 - Intermédiaire avancé',
-    description: 'Niveau intermédiaire avancé - Maîtrisez l\'anglais courant',
+    name: 'Intermédiaire avancé',
+    description: 'Maîtrisez l\'anglais courant',
     color: LEVEL_COLORS.B2
   },
   {
     id: 'C1',
-    name: 'C1 - Avancé',
-    description: 'Niveau avancé - Exprimez-vous avec précision',
+    name: 'Avancé',
+    description: 'Exprimez-vous avec précision',
     color: LEVEL_COLORS.C1
   },
   {
     id: 'C2',
-    name: 'C2 - Maîtrise',
-    description: 'Niveau maîtrise - Parlez comme un natif',
+    name: 'Maîtrise',
+    description: 'Parlez comme un natif',
     color: LEVEL_COLORS.C2
   }
 ]

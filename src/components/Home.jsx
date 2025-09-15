@@ -10,6 +10,18 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="welcome-section">
+        <div className="logo-section">
+          <div className="hot-air-balloon" aria-label="Brizzle logo">
+            <img
+              className="hot-air-balloon-img"
+              src="/brizzle-balloon.png"
+              alt="Brizzle hot air balloon logo"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+        
         <div className="levels-section">
           <h2>Choisissez votre niveau</h2>
           <p className="levels-description">
@@ -35,7 +47,7 @@ const Home = () => {
               >
                 <div className="level-header">
                   <div className="level-id">{level.id} :</div>
-                  <h3 className="level-name">{level.name.split(' - ')[1]}</h3>
+                  <h3 className="level-name">{level.name}</h3>
                 </div>
                 <p className="level-description">{level.description}</p>
                 <div className="level-arrow">→</div>
