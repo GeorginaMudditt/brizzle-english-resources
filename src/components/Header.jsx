@@ -8,7 +8,7 @@ const Header = () => {
           <div className="hot-air-balloon" aria-label="Brizzle logo">
             <img
               className="hot-air-balloon-img"
-              src="/brizzle-balloon.png"
+              src="./brizzle-balloon.png"
               alt="Brizzle hot air balloon logo"
               loading="eager"
               decoding="async"
