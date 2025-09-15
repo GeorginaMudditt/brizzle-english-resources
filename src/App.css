@@ -6,6 +6,18 @@
   box-sizing: border-box;
 }
 
+/* Reset and center body */
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
 /* App Styles */
 .App {
   min-height: 100vh;
@@ -13,19 +25,17 @@
   color: #2c3e50;
   position: relative;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  text-align: center;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto !important;
   padding: 0 2rem;
   width: 100%;
   box-sizing: border-box;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 /* Header Styles */
@@ -257,10 +267,7 @@
 .welcome-section {
   text-align: center;
   max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto !important;
 }
 
 
