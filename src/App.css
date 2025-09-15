@@ -50,7 +50,7 @@
 
 .hot-air-balloon-img {
   display: block;
-  width: 100%;
+  width: 20%;
   height: 100%;
   object-fit: contain;
 }
@@ -58,19 +58,18 @@
 /* Brand Text */
 .brand-text h1 {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 5.5rem;
+  font-size: 3rem; /* 48px */
   margin: 0 0 0.5rem 0;
   font-weight: 900;
-  color: #C73E3E;
+  color: #C73E3E; /* red */
 }
 
 .brand-text h2 {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem; /* 24px */
   margin: 0;
-  color: #4A4A7D;
-  font-weight: 400;
-  font-style: italic;
+  color: #4A4A7D; /* blue */
+  font-weight: 500;
 }
 
 
@@ -312,16 +311,16 @@
 
 .levels-section h2 {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 2.5rem;
-  color: #C73E3E;
+  font-size: 2.25rem; /* 36px */
+  color: #C73E3E; /* red */
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .levels-description {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 1.2rem;
-  color: #4A4A7D;
+  font-size: 1.5rem; /* 24px */
+  color: #4A4A7D; /* blue */
   margin-bottom: 3rem;
   line-height: 1.6;
 }
@@ -435,8 +434,8 @@
 
 .cecrl-section h3 {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 1.8rem;
-  color: #2C3E50;
+  font-size: 1.5rem; /* 24px */
+  color: #4A4A7D; /* blue */
   margin-bottom: 1.5rem;
   font-weight: 600;
   line-height: 1.4;
@@ -444,8 +443,8 @@
 
 .cecrl-section p {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 1.1rem;
-  color: #2C3E50;
+  font-size: 1rem; /* 16px */
+  color: #4A4A7D; /* blue */
   line-height: 1.6;
   margin: 0;
 }
