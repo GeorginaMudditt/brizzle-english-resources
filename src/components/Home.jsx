@@ -16,6 +16,15 @@ const Home = () => {
             Sélectionnez le niveau qui correspond le mieux à vos compétences actuelles en anglais
           </p>
           
+          <div className="progress-bar">
+            <div className="progress-segment a1">A1</div>
+            <div className="progress-segment a2">A2</div>
+            <div className="progress-segment b1">B1</div>
+            <div className="progress-segment b2">B2</div>
+            <div className="progress-segment c1">C1</div>
+            <div className="progress-segment c2">C2</div>
+          </div>
+          
           <div className="levels-grid">
             {LEVELS.map((level) => (
               <div 
@@ -25,8 +34,8 @@ const Home = () => {
                 onClick={() => handleLevelClick(level.id)}
               >
                 <div className="level-header">
-                  <span className="level-id">{level.id}</span>
-                  <h3 className="level-name">{level.name}</h3>
+                  <div className="level-id">{level.id} :</div>
+                  <h3 className="level-name">{level.name.split(' - ')[1]}</h3>
                 </div>
                 <p className="level-description">{level.description}</p>
                 <div className="level-arrow">→</div>

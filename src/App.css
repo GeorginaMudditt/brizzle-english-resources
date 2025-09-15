@@ -4,26 +4,9 @@
 /* App Styles */
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-  background-attachment: fixed;
+  background: #ffffff;
   color: #2c3e50;
   position: relative;
-}
-
-.App::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(56, 68, 143, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(186, 54, 39, 0.05) 0%, transparent 50%),
-    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
-  background-size: 400px 400px, 600px 600px, 200px 200px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .container {
@@ -71,15 +54,14 @@
   font-size: 5.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: 900;
-  color: #BA3627;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color: #C73E3E;
 }
 
 .brand-text h2 {
   font-family: 'ABeeZee', sans-serif;
   font-size: 1.4rem;
   margin: 0;
-  color: #38448F;
+  color: #4A4A7D;
   font-weight: 400;
   font-style: italic;
 }
@@ -291,6 +273,38 @@
   font-style: italic;
 }
 
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  max-width: 600px;
+  margin: 2rem auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-segment {
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  border-right: 1px solid #e0e0e0;
+}
+
+.progress-segment:last-child {
+  border-right: none;
+}
+
+.progress-segment.a1 { background-color: #FADDE1; }
+.progress-segment.a2 { background-color: #FDE7D9; }
+.progress-segment.b1 { background-color: #D9EDF7; }
+.progress-segment.b2 { background-color: #E0D9ED; }
+.progress-segment.c1 { background-color: #D9F7E0; }
+.progress-segment.c2 { background-color: #F7F0D9; }
+
 /* Levels Section */
 .levels-section {
   margin: 4rem 0;
@@ -299,7 +313,7 @@
 .levels-section h2 {
   font-family: 'ABeeZee', sans-serif;
   font-size: 2.5rem;
-  color: #BA3627;
+  color: #C73E3E;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -307,7 +321,7 @@
 .levels-description {
   font-family: 'ABeeZee', sans-serif;
   font-size: 1.2rem;
-  color: #2C3E50;
+  color: #4A4A7D;
   margin-bottom: 3rem;
   line-height: 1.6;
 }
@@ -344,81 +358,70 @@
 }
 
 .level-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  background: #ffffff;
+  border-radius: 16px;
   padding: 2rem;
-  border: 3px solid var(--level-color);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--level-color);
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
-}
-
-.level-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--level-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .level-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-  border-color: var(--level-color);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .level-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .level-id {
-  background: var(--level-color);
-  color: white;
   font-family: 'ABeeZee', sans-serif;
   font-weight: 700;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-  min-width: 50px;
-  text-align: center;
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 0.5rem;
 }
 
 .level-name {
   font-family: 'ABeeZee', sans-serif;
-  font-size: 1.4rem;
-  color: #2C3E50;
-  margin: 0;
-  font-weight: 600;
+  font-size: 1.6rem;
+  color: #000;
+  margin: 0 0 1rem 0;
+  font-weight: 900;
+  line-height: 1.2;
 }
 
 .level-description {
   font-family: 'ABeeZee', sans-serif;
-  color: #2C3E50;
-  line-height: 1.6;
-  margin: 0 0 1.5rem 0;
+  color: #000;
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 .level-arrow {
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
-  font-size: 1.5rem;
-  color: var(--level-color);
+  width: 40px;
+  height: 40px;
+  background: var(--level-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
   font-weight: bold;
   transition: transform 0.3s ease;
 }
 
 .level-card:hover .level-arrow {
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 /* CECRL Section */
@@ -629,6 +632,15 @@
   .levels-grid {
     gap: 1.5rem;
     max-width: 100%;
+  }
+  
+  .progress-bar {
+    margin: 1.5rem auto;
+  }
+  
+  .progress-segment {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
   }
   
   .level-card {
