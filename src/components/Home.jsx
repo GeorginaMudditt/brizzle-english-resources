@@ -16,15 +16,6 @@ const Home = () => {
             Sélectionnez le niveau qui correspond le mieux à vos compétences actuelles en anglais
           </p>
           
-          <div className="progress-bar">
-            <div className="progress-segment a1">A1</div>
-            <div className="progress-segment a2">A2</div>
-            <div className="progress-segment b1">B1</div>
-            <div className="progress-segment b2">B2</div>
-            <div className="progress-segment c1">C1</div>
-            <div className="progress-segment c2">C2</div>
-          </div>
-          
           <div className="levels-grid">
             {LEVELS.map((level) => (
               <div 
@@ -66,6 +57,20 @@ const Home = () => {
               en anglais
             </a>
           </p>
+        </div>
+        
+        <div className="progression-section">
+          <h2>Vérifiez votre progression</h2>
+          <h3>Combien de ressources avez-vous terminées ?</h3>
+          
+          <div className="progress-bar">
+            <div className="progress-segment a1">A1</div>
+            <div className="progress-segment a2">A2</div>
+            <div className="progress-segment b1">B1</div>
+            <div className="progress-segment b2">B2</div>
+            <div className="progress-segment c1">C1</div>
+            <div className="progress-segment c2">C2</div>
+          </div>
         </div>
       </div>
     </div>

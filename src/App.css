@@ -275,7 +275,7 @@
 /* Progress Bar */
 .progress-bar {
   display: flex;
-  max-width: 600px;
+  width: 100%;
   margin: 2rem auto;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -430,6 +430,31 @@
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Progression Section */
+.progression-section {
+  margin: 4rem 0;
+  text-align: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progression-section h2 {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 2.25rem; /* 36px */
+  color: #C73E3E; /* red */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.progression-section h3 {
+  font-family: 'ABeeZee', sans-serif;
+  font-size: 1.5rem; /* 24px */
+  color: #4A4A7D; /* blue */
+  margin-bottom: 2rem;
+  font-weight: 600;
 }
 
 .cecrl-section h3 {
