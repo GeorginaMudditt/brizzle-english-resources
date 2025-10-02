@@ -4,7 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A React + Supabase + Vite application ready for deployment",
-  "keywords": ["react", "supabase", "vite", "frontend"],
+  "keywords": [
+    "react",
+    "supabase",
+    "vite",
+    "frontend"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "homepage": ".",
@@ -18,7 +23,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.57.2",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

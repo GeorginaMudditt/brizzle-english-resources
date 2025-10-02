@@ -1,39 +1,55 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Auth from './components/Auth'
 import Home from './components/Home'
+import LevelA1 from './components/LevelA1'
+import LevelA2 from './components/LevelA2'
+import LevelB1 from './components/LevelB1'
+import LevelB2 from './components/LevelB2'
+import LevelC1 from './components/LevelC1'
+import LevelC2 from './components/LevelC2'
 import './App.css'
 
 function App() {
-  const [showAuth, setShowAuth] = useState(false)
-
   return (
-    <div className="App">
-      <Header />
-      <main className="main">
-        <div className="container">
-          {/* Dev toggle - remove this when auth is working */}
-          <div className="dev-toggle" style={{ marginBottom: '2rem', textAlign: 'center' }}>
-            <button 
-              onClick={() => setShowAuth(!showAuth)}
-              style={{
-                background: '#38448F',
-                color: 'white',
-                border: 'none',
-                padding: '0.5rem 1rem',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                fontSize: '0.9rem'
-              }}
-            >
-              {showAuth ? 'Show Home Page' : 'Show Auth Page (Dev)'}
-            </button>
-          </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Home route */}
+          <Route path="/" element={
+            <>
+              <Header />
+              <main className="main">
+                <div className="container">
+                  <Home />
+                </div>
+              </main>
+            </>
+          } />
           
-          {showAuth ? <Auth /> : <Home />}
-        </div>
-      </main>
-    </div>
+          {/* Auth route */}
+          <Route path="/auth" element={
+            <>
+              <Header />
+              <main className="main">
+                <div className="container">
+                  <Auth />
+                </div>
+              </main>
+            </>
+          } />
+          
+          {/* Level routes */}
+          <Route path="/level/a1" element={<LevelA1 />} />
+          <Route path="/level/a2" element={<LevelA2 />} />
+          <Route path="/level/b1" element={<LevelB1 />} />
+          <Route path="/level/b2" element={<LevelB2 />} />
+          <Route path="/level/c1" element={<LevelC1 />} />
+          <Route path="/level/c2" element={<LevelC2 />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

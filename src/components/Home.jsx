@@ -1,10 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { LEVELS } from '../constants/colors'
 
 const Home = () => {
+  const navigate = useNavigate()
+
   const handleLevelClick = (levelId) => {
     console.log(`Niveau ${levelId} sélectionné`)
-    // TODO: Navigate to level page
+    navigate(`/level/${levelId.toLowerCase()}`)
   }
 
   return (
