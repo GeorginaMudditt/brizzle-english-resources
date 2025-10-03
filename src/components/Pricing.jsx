@@ -1,5 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import cuppaIcon from '../assets/cuppa-icon.png'
+import sarnieIcon from '../assets/sarnie-icon.png'
+import fullEnglishIcon from '../assets/full-english-icon.png'
 
 const Pricing = () => {
   const navigate = useNavigate()
@@ -8,7 +11,7 @@ const Pricing = () => {
     {
       id: 'cuppa',
       name: '« Cuppa »',
-      icon: '/assets/cuppa-icon.png',
+      icon: cuppaIcon,
       price: '0€',
       period: '/mois',
       description: 'Parfait pour commencer',
@@ -25,7 +28,7 @@ const Pricing = () => {
     {
       id: 'sarnie',
       name: '« Sarnie »',
-      icon: '/assets/sarnie-icon.png',
+      icon: sarnieIcon,
       price: '20€',
       period: '/mois',
       description: 'Accès illimité à toutes les ressources',
@@ -43,7 +46,7 @@ const Pricing = () => {
     {
       id: 'full-english',
       name: '« Full English »',
-      icon: '/assets/full-english-icon.png',
+      icon: fullEnglishIcon,
       price: '50€',
       period: '/mois',
       description: 'Tout Sarnie + cours en direct',
