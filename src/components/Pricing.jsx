@@ -73,7 +73,7 @@ const Pricing = () => {
           <div className="pricing-content">
             <div className="pricing-header">
               <h2>Choisissez votre plan d'apprentissage</h2>
-              <p class="levels-description">Découvrez nos offres adaptées à vos besoins d'apprentissage de l'anglais</p>
+              <p className="levels-description">Découvrez nos offres adaptées à vos besoins d'apprentissage de l'anglais</p>
             </div>
 
             <div className="pricing-grid">
