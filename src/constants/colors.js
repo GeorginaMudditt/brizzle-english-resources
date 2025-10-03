@@ -49,3 +49,43 @@ export const LEVELS = [
     color: LEVEL_COLORS.C2
   }
 ]
+
+// Skill categories for each level
+export const SKILLS = [
+  {
+    id: 'vocabulary',
+    name: 'Vocabulaire',
+    description: 'Développez votre connaissance des mots',
+    icon: '📚'
+  },
+  {
+    id: 'grammar',
+    name: 'Grammaire',
+    description: 'Maîtrisez la structure de la langue',
+    icon: '📝'
+  },
+  {
+    id: 'reading',
+    name: 'Lecture',
+    description: 'Améliorez vos compétences de compréhension',
+    icon: '📖'
+  },
+  {
+    id: 'writing',
+    name: 'Écriture',
+    description: 'Exprimez-vous clairement',
+    icon: '✍️'
+  },
+  {
+    id: 'listening',
+    name: 'Écoute',
+    description: 'Comprenez l\'anglais parlé',
+    icon: '👂'
+  },
+  {
+    id: 'speaking',
+    name: 'Expression orale',
+    description: 'Communiquez avec confiance',
+    icon: '🗣️'
+  }
+]

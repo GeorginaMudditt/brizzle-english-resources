@@ -9,12 +9,14 @@ import LevelB1 from './components/LevelB1'
 import LevelB2 from './components/LevelB2'
 import LevelC1 from './components/LevelC1'
 import LevelC2 from './components/LevelC2'
+import Pricing from './components/Pricing'
 import './App.css'
 
 function App() {
   return (
     <Router>
       <div className="App">
+        {/* Navigation is handled in Header component */}
         <Routes>
           {/* Home route */}
           <Route path="/" element={
@@ -41,12 +43,50 @@ function App() {
           } />
           
           {/* Level routes */}
-          <Route path="/level/a1" element={<LevelA1 />} />
-          <Route path="/level/a2" element={<LevelA2 />} />
-          <Route path="/level/b1" element={<LevelB1 />} />
-          <Route path="/level/b2" element={<LevelB2 />} />
-          <Route path="/level/c1" element={<LevelC1 />} />
-          <Route path="/level/c2" element={<LevelC2 />} />
+          <Route path="/level/a1" element={
+            <>
+              <Header />
+              <LevelA1 />
+            </>
+          } />
+          <Route path="/level/a2" element={
+            <>
+              <Header />
+              <LevelA2 />
+            </>
+          } />
+          <Route path="/level/b1" element={
+            <>
+              <Header />
+              <LevelB1 />
+            </>
+          } />
+          <Route path="/level/b2" element={
+            <>
+              <Header />
+              <LevelB2 />
+            </>
+          } />
+          <Route path="/level/c1" element={
+            <>
+              <Header />
+              <LevelC1 />
+            </>
+          } />
+          <Route path="/level/c2" element={
+            <>
+              <Header />
+              <LevelC2 />
+            </>
+          } />
+          
+          {/* Pricing route */}
+          <Route path="/pricing" element={
+            <>
+              <Header />
+              <Pricing />
+            </>
+          } />
         </Routes>
       </div>
     </Router>
