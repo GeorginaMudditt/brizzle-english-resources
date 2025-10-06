@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Auth from './components/Auth'
@@ -11,9 +11,21 @@ import LevelC1 from './components/LevelC1'
 import LevelC2 from './components/LevelC2'
 import Pricing from './components/Pricing'
 import Vocabulary from './components/Vocabulary'
+import Challenge from './components/Challenge'
 import './App.css'
 
 function App() {
+  // One-time reset of saved challenge progress so ticks/icons are cleared
+  useEffect(() => {
+    try {
+      Object.keys(localStorage)
+        .filter((key) => key.startsWith('challenge_'))
+        .forEach((key) => localStorage.removeItem(key))
+    } catch (_) {
+      // ignore
+    }
+  }, [])
+
   return (
     <Router>
       <div className="App">
@@ -94,6 +106,14 @@ function App() {
             <>
               <Header />
               <Vocabulary />
+            </>
+          } />
+          
+          {/* Challenge routes */}
+          <Route path="/level/:level/vocabulary/:topic/challenge/:challengeType" element={
+            <>
+              <Header />
+              <Challenge />
             </>
           } />
         </Routes>
