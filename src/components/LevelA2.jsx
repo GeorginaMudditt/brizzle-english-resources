@@ -7,8 +7,12 @@ const LevelA2 = () => {
   const levelColor = LEVEL_COLORS.A2
 
   const handleSkillClick = (skillId) => {
-    console.log(`Skill ${skillId} clicked for A2 level`)
-    // TODO: Navigate to skill page
+    if (skillId === 'vocabulary') {
+      navigate('/level/a2/vocabulary')
+    } else {
+      console.log(`Skill ${skillId} clicked for A2 level`)
+      // TODO: Navigate to other skill pages
+    }
   }
 
   return (

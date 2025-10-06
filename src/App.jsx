@@ -10,6 +10,7 @@ import LevelB2 from './components/LevelB2'
 import LevelC1 from './components/LevelC1'
 import LevelC2 from './components/LevelC2'
 import Pricing from './components/Pricing'
+import Vocabulary from './components/Vocabulary'
 import './App.css'
 
 function App() {
@@ -85,6 +86,14 @@ function App() {
             <>
               <Header />
               <Pricing />
+            </>
+          } />
+          
+          {/* Vocabulary routes */}
+          <Route path="/level/:level/vocabulary" element={
+            <>
+              <Header />
+              <Vocabulary />
             </>
           } />
         </Routes>
