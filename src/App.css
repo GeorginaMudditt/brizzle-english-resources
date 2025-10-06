@@ -939,10 +939,12 @@ div[style*="position: fixed"] {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: 2rem 0;
+  overflow-x: auto;
 }
 
 .vocabulary-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
   font-size: 1rem;
 }
@@ -975,6 +977,65 @@ div[style*="position: fixed"] {
 
 .vocabulary-table tbody tr:hover {
   background-color: #e3f2fd;
+}
+
+/* Responsive design for vocabulary table */
+@media (max-width: 768px) {
+  .vocabulary-header h2 {
+    font-size: 2rem;
+  }
+  
+  .vocabulary-table {
+    font-size: 0.8rem;
+  }
+  
+  .vocabulary-table th,
+  .vocabulary-table td {
+    padding: 0.5rem 0.3rem;
+  }
+  
+  .vocabulary-table th {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  .vocabulary-table td:first-child {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .vocabulary-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .vocabulary-table {
+    font-size: 0.7rem;
+  }
+  
+  .vocabulary-table th,
+  .vocabulary-table td {
+    padding: 0.4rem 0.2rem;
+  }
+  
+  .vocabulary-table th {
+    font-size: 0.65rem;
+    line-height: 1.1;
+  }
+  
+  .vocabulary-table td:first-child {
+    font-size: 0.7rem;
+  }
+  
+  .vocabulary-content {
+    padding: 1rem 0;
+  }
+  
+  .vocabulary-table-container {
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
 }
 
 /* Pricing page styles */
