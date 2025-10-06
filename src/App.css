@@ -909,6 +909,74 @@ div[style*="position: fixed"] {
   }
 }
 
+/* Vocabulary page styles */
+.vocabulary-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.vocabulary-content {
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vocabulary-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vocabulary-header h2 {
+  color: #4A4A7D;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.vocabulary-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.vocabulary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.vocabulary-table th {
+  background: #4A4A7D;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+.vocabulary-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.vocabulary-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: #4A4A7D;
+}
+
+.vocabulary-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.vocabulary-table tbody tr:hover {
+  background-color: #e3f2fd;
+}
+
 /* Pricing page styles */
 .pricing-page {
   min-height: 100vh;

@@ -28,10 +28,77 @@ const Vocabulary = () => {
             </div>
 
             <div className="vocabulary-grid">
-              {/* Placeholder for vocabulary content */}
-              <div className="vocabulary-section">
-                <h3>Contenu à venir</h3>
-                <p>Le contenu du vocabulaire sera ajouté ici prochainement.</p>
+              <div className="vocabulary-table-container">
+                <table className="vocabulary-table">
+                  <thead>
+                    <tr>
+                      <th>Topic</th>
+                      <th>Number of words</th>
+                      <th>Bronze challenge</th>
+                      <th>Silver challenge</th>
+                      <th>Gold challenge</th>
+                      <th>Completed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Animals</td>
+                      <td>9</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Food & Drink (A)</td>
+                      <td>19</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
