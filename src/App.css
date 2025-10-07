@@ -1082,6 +1082,37 @@ div[style*="position: fixed"] {
   object-fit: contain;
 }
 
+/* Download banner under vocabulary table */
+.download-banner {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4A4A7D; /* Brizzle blue */
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(74, 74, 125, 0.25);
+}
+
+.download-link:hover {
+  background: #3a3a6d;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(74, 74, 125, 0.35);
+}
+
+.download-icon {
+  font-size: 1.25rem;
+}
+
 /* Challenge page styles */
 .challenge-page {
   min-height: 100vh;

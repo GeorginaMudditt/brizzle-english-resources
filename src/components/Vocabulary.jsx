@@ -245,6 +245,18 @@ const Vocabulary = () => {
                   </tbody>
                 </table>
               </div>
+              <div className="download-banner">
+                <a
+                  href="/a1-vocabulary.pdf"
+                  className="download-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <span className="download-icon" aria-hidden="true">⬇️</span>
+                  <span>Télécharger la liste complète du vocabulaire A1</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
