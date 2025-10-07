@@ -247,7 +247,7 @@ const Vocabulary = () => {
               </div>
               <div className="download-banner">
                 <a
-                  href="/a1-vocabulary.pdf"
+                  href="https://ulrwcortyhassmytkcij.supabase.co/storage/v1/object/public/A1_audio/A1%20vocabulary%20list.pdf"
                   className="download-link"
                   target="_blank"
                   rel="noopener noreferrer"
