@@ -1428,7 +1428,7 @@ div[style*="position: fixed"] {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 10px;
   background: white;
   border-radius: 8px;
   border: 2px solid #e9ecef;
@@ -1444,7 +1444,8 @@ div[style*="position: fixed"] {
 .drop-zone {
   flex: 1;
   min-height: 42px;
-  max-width: 220px; /* reduce width */
+  max-width: 350px; /* Much wider to prevent text wrapping */
+  min-width: 200px; /* Ensure minimum width */
   border: 2px dashed #c0c0c0;
   border-radius: 8px;
   display: flex;
@@ -1452,6 +1453,8 @@ div[style*="position: fixed"] {
   justify-content: center;
   transition: all 0.2s ease;
   background: #f8f9fa;
+  padding: 8px 12px; /* Add horizontal padding */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .drop-zone:hover {
