@@ -245,18 +245,20 @@ const Vocabulary = () => {
                   </tbody>
                 </table>
               </div>
-              <div className="download-banner">
-                <a
-                  href="https://ulrwcortyhassmytkcij.supabase.co/storage/v1/object/public/A1_audio/A1%20vocabulary%20list.pdf"
-                  className="download-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                >
-                  <span className="download-icon" aria-hidden="true">⬇️</span>
-                  <span>Télécharger la liste complète du vocabulaire A1</span>
-                </a>
-              </div>
+              {level === 'a1' && (
+                <div className="download-banner">
+                  <a
+                    href="https://ulrwcortyhassmytkcij.supabase.co/storage/v1/object/public/A1_audio/A1%20vocabulary%20list.pdf"
+                    className="download-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                  >
+                    <span className="download-icon" aria-hidden="true">⬇️</span>
+                    <span>Télécharger la liste complète du vocabulaire A1</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1113,6 +1113,34 @@ div[style*="position: fixed"] {
   font-size: 1.25rem;
 }
 
+/* Coming soon tooltip for non-vocabulary skill cards */
+.skill-card.coming-soon {
+  position: relative;
+}
+
+.skill-card.coming-soon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(42, 48, 110, 0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.skill-card.coming-soon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
 /* Challenge page styles */
 .challenge-page {
   min-height: 100vh;

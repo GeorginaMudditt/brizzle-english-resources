@@ -27,9 +27,10 @@ const LevelC2 = () => {
                 {SKILLS.map((skill) => (
                   <div 
                     key={skill.id}
-                    className="skill-card"
+                    className={`skill-card ${skill.id !== 'vocabulary' ? 'coming-soon' : ''}`}
                     style={{ borderColor: levelColor }}
                     onClick={() => handleSkillClick(skill.id)}
+                    data-tooltip={skill.id !== 'vocabulary' ? 'Bientôt disponible' : undefined}
                   >
                     <div className="skill-icon">{skill.icon}</div>
                     <h3 className="skill-name">{skill.name}</h3>
