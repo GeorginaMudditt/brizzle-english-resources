@@ -24,6 +24,7 @@ const Vocabulary = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [topicToIcon, setTopicToIcon] = useState({})
+  const [topicToFrench, setTopicToFrench] = useState({})
 
   // Get progress for a topic from localStorage
   const getTopicProgress = (topicName) => {
@@ -118,26 +119,31 @@ const Vocabulary = () => {
     }
   }, [level])
 
-  // Fetch completion icons for topics from Brizzle_A1_icons
+  // Fetch completion icons and French translations for topics from Brizzle_A1_icons
   useEffect(() => {
-    const fetchIcons = async () => {
+    const fetchIconsAndFrench = async () => {
       try {
         const { data, error } = await supabase
           .from('Brizzle_A1_icons')
-          .select('topic_page, icon')
+          .select('topic_page, icon, topic_french')
 
         if (error) throw error
-        const map = {}
+        const iconMap = {}
+        const frenchMap = {}
         ;(data || []).forEach(row => {
-          if (row.topic_page && row.icon) map[row.topic_page] = row.icon
+          if (row.topic_page) {
+            if (row.icon) iconMap[row.topic_page] = row.icon
+            if (row.topic_french) frenchMap[row.topic_page] = row.topic_french
+          }
         })
-        setTopicToIcon(map)
+        setTopicToIcon(iconMap)
+        setTopicToFrench(frenchMap)
       } catch (err) {
-        // non-fatal; icons are optional
+        // non-fatal; icons and French translations are optional
       }
     }
 
-    if (level === 'a1') fetchIcons()
+    if (level === 'a1') fetchIconsAndFrench()
   }, [level])
 
   return (
@@ -148,7 +154,7 @@ const Vocabulary = () => {
             <div className="vocabulary-header">
               <h2 style={{ color: getLevelColor() }}>Vocabulaire - Niveau {getLevelDisplay(level)}</h2>
               <div className="levels-description">
-                <p>🎯 Complétez trois défis (bronze, argent, or) pour chaque thème.</p>
+                <p>🎯 Complétez trois défis (1, 2, 3) pour chaque thème.</p>
                 <p>🧭 Vous pouvez compléter les thèmes dans n'importe quel ordre.</p>
                 <p>🏆 L'objectif est d'apprendre tous les mots en terminant tous les défis.</p>
                 <p>🎉 Amusez-vous en regardant votre tableau se remplir de récompenses !</p>
@@ -161,11 +167,11 @@ const Vocabulary = () => {
                   <thead>
                     <tr style={{ backgroundColor: getLevelColor() }}>
                       <th>Thème</th>
-                      <th>Nombre de mots</th>
-                      <th>Défi bronze</th>
-                      <th>Défi argent</th>
-                      <th>Défi or</th>
-                      <th>Terminé</th>
+                      <th className="col-count">Nombre de mots</th>
+                      <th className="col-challenge">Défi 1</th>
+                      <th className="col-challenge">Défi 2</th>
+                      <th className="col-challenge">Défi 3</th>
+                      <th className="col-completed">Terminé</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -192,27 +198,28 @@ const Vocabulary = () => {
                             className="topic-cell clickable"
                             onClick={() => handleTopicClick(topic.name)}
                             style={{ cursor: 'pointer' }}
+                            title={topicToFrench[topic.name] || ''}
                           >
                             {topic.name}
                           </td>
-                          <td>{topic.count}</td>
+                          <td className="count-cell">{topic.count}</td>
                           <td className="challenge-cell">
                             {progress.bronze ? (
-                              <span className="challenge-complete bronze">✓</span>
+                              <span className="challenge-complete">🏅</span>
                             ) : (
                               <span className="challenge-incomplete">○</span>
                             )}
                           </td>
                           <td className="challenge-cell">
                             {progress.silver ? (
-                              <span className="challenge-complete silver">✓</span>
+                              <span className="challenge-complete">🏅</span>
                             ) : (
                               <span className="challenge-incomplete">○</span>
                             )}
                           </td>
                           <td className="challenge-cell">
                             {progress.gold ? (
-                              <span className="challenge-complete gold">✓</span>
+                              <span className="challenge-complete">🏅</span>
                             ) : (
                               <span className="challenge-incomplete">○</span>
                             )}

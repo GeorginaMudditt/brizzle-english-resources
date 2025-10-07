@@ -10,7 +10,7 @@ const Pricing = () => {
   const pricingPlans = [
     {
       id: 'cuppa',
-      name: '« Cuppa »',
+      name: '«\u00A0Cuppa\u00A0»',
       icon: cuppaIcon,
       price: '0€',
       period: '/mois',
@@ -21,13 +21,13 @@ const Pricing = () => {
         'Progression sauvegardée',
         'Support communautaire'
       ],
-      buttonText: 'Commencer gratuitement',
-      buttonStyle: 'secondary',
+      buttonText: 'Choisir «\u00A0Cuppa\u00A0»',
+      buttonStyle: 'primary',
       popular: false
     },
     {
       id: 'sarnie',
-      name: '« Sarnie »',
+      name: '«\u00A0Sarnie\u00A0»',
       icon: sarnieIcon,
       price: '20€',
       period: '/mois',
@@ -39,26 +39,23 @@ const Pricing = () => {
         'Ressources exclusives',
         'Sauvegarde cloud'
       ],
-      buttonText: 'Choisir Sarnie',
+      buttonText: 'Choisir «\u00A0Sarnie\u00A0»',
       buttonStyle: 'primary',
-      popular: true
+      popular: false
     },
     {
       id: 'full-english',
-      name: '« Full English »',
+      name: '«\u00A0Full English\u00A0»',
       icon: fullEnglishIcon,
       price: '50€',
       period: '/mois',
-      description: 'Tout Sarnie + cours en direct',
+      description: 'Accès illimité plus cours en direct',
       features: [
-        'Tout ce qui est inclus dans Sarnie',
-        '2 cours de conversation de 30 min/mois',
-        'Corrections personnalisées',
-        '2 retours d\'écriture/mois',
-        'Tuteur dédié',
-        'Plan d\'apprentissage personnalisé'
+        'Tout ce qui est inclus dans «\u00A0Sarnie\u00A0»',
+        '2 cours de conversation en ligne de 30 min/mois avec corrections personnalisées',
+        '2 retours d\'écriture/mois'
       ],
-      buttonText: 'Choisir Full English',
+      buttonText: 'Choisir «\u00A0Full English\u00A0»',
       buttonStyle: 'primary',
       popular: false
     }
@@ -85,7 +82,6 @@ const Pricing = () => {
                   key={plan.id}
                   className={`pricing-card ${plan.popular ? 'popular' : ''}`}
                 >
-                  {plan.popular && <div className="popular-badge">Le plus populaire</div>}
                   
                   <div className="plan-header">
                     <div className="plan-icon">
@@ -119,7 +115,6 @@ const Pricing = () => {
             </div>
 
             <div className="pricing-footer">
-              <p>Tous les plans incluent un essai gratuit de 7 jours</p>
               <p>Annulation possible à tout moment</p>
             </div>
           </div>

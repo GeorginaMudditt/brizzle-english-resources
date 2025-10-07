@@ -1001,6 +1001,24 @@ div[style*="position: fixed"] {
   text-decoration: underline;
 }
 
+.topic-cell.clickable[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-top: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.topic-cell.clickable {
+  position: relative;
+}
+
 .challenge-cell {
   text-align: center;
   font-size: 1.2rem;
@@ -1010,6 +1028,21 @@ div[style*="position: fixed"] {
   font-weight: bold;
   font-size: 1.1rem;
 }
+.vocabulary-table th.col-count,
+.vocabulary-table td.count-cell {
+  width: 110px; /* narrower column for count */
+}
+
+.vocabulary-table th.col-challenge,
+.vocabulary-table td.challenge-cell {
+  width: 160px; /* wider and equal width for challenge columns */
+}
+
+.vocabulary-table th.col-completed,
+.vocabulary-table td.completion-cell {
+  width: 140px;
+}
+
 
 .challenge-complete.bronze {
   color: #cd7f31;
@@ -1059,6 +1092,29 @@ div[style*="position: fixed"] {
   padding: 2rem 0;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.route-loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 6px solid rgba(0,0,0,0.1);
+  border-top-color: #4A4A7D; /* overridden inline with level color */
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .challenge-header {
@@ -1135,7 +1191,7 @@ div[style*="position: fixed"] {
   padding: 1rem;
   background: #f8f9fa;
   border-radius: 8px;
-  border-left: 4px solid #cd7f31;
+  border-left: 4px solid var(--level-color, #ff595e);
   transition: all 0.2s ease;
 }
 
@@ -1729,12 +1785,12 @@ div[style*="position: fixed"] {
 }
 
 .plan-button.primary {
-  background: #C73E3E;
+  background: #4A4A7D;
   color: white;
 }
 
 .plan-button.primary:hover {
-  background: #a83232;
+  background: #3a3a6d;
   transform: translateY(-2px);
 }
 

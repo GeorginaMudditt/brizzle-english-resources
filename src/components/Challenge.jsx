@@ -114,8 +114,8 @@ const Challenge = () => {
     const newProgress = { ...progress, [challengeType]: true }
     saveProgress(newProgress)
 
-    // Show success popup then navigate
-    alert(`Félicitations ! Vous avez terminé avec succès le défi ${getChallengeTitle(challengeType).toLowerCase()} sur le thème « ${topic} ».`)
+    // Show success popup then navigate; next screen will show its own loading spinner
+    alert(`Félicitations ! Vous avez terminé avec succès le défi ${getChallengeTitle(challengeType).toLowerCase()} sur le thème « ${topic} ». `)
 
     setTimeout(() => {
       if (challengeType === 'bronze') {
@@ -125,7 +125,7 @@ const Challenge = () => {
       } else {
         navigate(`/level/${level}/vocabulary`)
       }
-    }, 1000)
+    }, 50)
   }
 
   // Play audio for pronunciation
@@ -227,9 +227,9 @@ const Challenge = () => {
 
   const getChallengeTitle = (type) => {
     const titles = {
-      bronze: 'Défi Bronze',
-      silver: 'Défi Argent',
-      gold: 'Défi Or'
+      bronze: 'Défi 1',
+      silver: 'Défi 2',
+      gold: 'Défi 3'
     }
     return titles[type] || 'Défi'
   }
@@ -248,9 +248,23 @@ const Challenge = () => {
     setGoldInputs(prev => ({ ...prev, [french]: value }))
   }
 
+  // While words load, show a clean spinner screen
+  if (loading) {
+    return (
+      <div className="challenge-page">
+        <main className="main">
+          <div className="container">
+            <div className="route-loading">
+              <div className="spinner" style={{ borderTopColor: getLevelColor() }} />
+            </div>
+          </div>
+        </main>
+      </div>
+    )
+  }
 
   return (
-    <div className="challenge-page">
+    <div className="challenge-page" style={{ '--level-color': getLevelColor() }}>
       <main className="main">
         <div className="container">
           <div className="challenge-content">
@@ -283,7 +297,7 @@ const Challenge = () => {
                       {loading && <div className="loading">Chargement des mots...</div>}
                       {error && <div className="error">Erreur : {error}</div>}
                       
-                      {!loading && !error && words.length > 0 && (
+                      {!error && words.length > 0 && (
                         <div className="words-list">
                           {words.map((word, index) => (
                             <div key={index} className="word-item">
@@ -306,7 +320,7 @@ const Challenge = () => {
                         </div>
                       )}
                       
-                      {!loading && !error && words.length === 0 && (
+                      {!error && words.length === 0 && (
                         <div className="no-words">Aucun mot trouvé pour ce thème.</div>
                       )}
                       
@@ -317,7 +331,7 @@ const Challenge = () => {
                           style={{ backgroundColor: getLevelColor() }}
                           disabled={words.length === 0 || listenedWords.size < words.length}
                         >
-                          Terminer le défi Bronze
+                          Terminer le Défi 1
                         </button>
                       </div>
                     </div>
@@ -328,10 +342,9 @@ const Challenge = () => {
                         <p>Glissez les mots anglais (cartes colorées) vers les cases à côté de leur traduction française correspondante. Pour renvoyer une carte colorée vers la liste de droite, cliquez simplement dessus.</p>
                       </div>
                       
-                      {loading && <div className="loading">Chargement des mots...</div>}
                       {error && <div className="error">Erreur : {error}</div>}
                       
-                      {!loading && !error && words.length > 0 && (
+                      {!error && words.length > 0 && (
                         <div className="silver-game">
                           <div className="french-words-section">
                             <div className="french-words-list">
@@ -378,7 +391,7 @@ const Challenge = () => {
                         </div>
                       )}
                       
-                      {!loading && !error && words.length === 0 && (
+                      {!error && words.length === 0 && (
                         <div className="no-words">Aucun mot trouvé pour ce thème.</div>
                       )}
                       
@@ -388,7 +401,7 @@ const Challenge = () => {
                           onClick={completeChallenge}
                           style={{ backgroundColor: getLevelColor() }}
                         >
-                          Terminer le défi Argent
+                          Terminer le Défi 2
                         </button>
                       </div>
                     </div>
@@ -399,10 +412,9 @@ const Challenge = () => {
                         <p>Pour chaque mot français, tapez le mot anglais correspondant dans la case. L'orthographe et la ponctuation doivent être exactes.</p>
                       </div>
 
-                      {loading && <div className="loading">Chargement des mots...</div>}
                       {error && <div className="error">Erreur : {error}</div>}
 
-                      {!loading && !error && goldShuffled.length > 0 && (
+                      {!error && goldShuffled.length > 0 && (
                         <div className="gold-list">
                           {goldShuffled.map((word, index) => (
                             <div key={index} className="gold-item">
@@ -419,7 +431,7 @@ const Challenge = () => {
                         </div>
                       )}
 
-                      {!loading && !error && goldShuffled.length === 0 && (
+                      {!error && goldShuffled.length === 0 && (
                         <div className="no-words">Aucun mot trouvé pour ce thème.</div>
                       )}
 
@@ -429,7 +441,7 @@ const Challenge = () => {
                           onClick={completeChallenge}
                           style={{ backgroundColor: getLevelColor() }}
                         >
-                          Terminer le défi Or
+                          Terminer le Défi 3
                         </button>
                       </div>
                     </div>
