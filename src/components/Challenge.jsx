@@ -115,7 +115,7 @@ const Challenge = () => {
     saveProgress(newProgress)
 
     // Show success popup then navigate; next screen will show its own loading spinner
-    alert(`Félicitations ! Vous avez terminé avec succès le défi ${getChallengeTitle(challengeType).toLowerCase()} sur le thème « ${topic} ». `)
+    alert(`Félicitations ! Vous avez terminé avec succès le ${getChallengeTitle(challengeType).toLowerCase()} sur le thème « ${topic} ». `)
 
     setTimeout(() => {
       if (challengeType === 'bronze') {
